@@ -25,7 +25,7 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       body: pages[pageIndex],
       bottomNavigationBar: Container(
-          height: MediaQuery.of(context).size.height * 0.1,
+          height: MediaQuery.of(context).size.height * 0.07,
           decoration: BoxDecoration(
             color: Colors.black,
           ),
@@ -62,21 +62,43 @@ class _MainPageState extends State<MainPage> {
                     color: pageIndex == 1 ? Colors.white : Colors.white10,
                   ),
                 ),
-                IconButton(
-                  enableFeedback: false,
-                  onPressed: () {
-                    setState(() {
-                      pageIndex = 2;
-                    });
-                  },
-                  icon: SvgPicture.asset(
-                    "icons/bell.svg",
-                    height: 25,
-                    width: 25,
-                    color:
-                        pageIndex == 2 ?Colors.white : Colors.white10,
-                  ),
-                ),
+                Stack(
+                  children: [
+                    IconButton(
+                      enableFeedback: false,
+                      onPressed: () {
+                        setState(() {
+                          pageIndex = 2;
+                        });
+                      },
+                      icon: SvgPicture.asset(
+                        "icons/bell.svg",
+                        height: 25,
+                        width: 25,
+                        color: pageIndex == 2 ? Colors.white : Colors.white10,
+                      ),
+                    ),
+                    Positioned(
+                      right: 0,
+                      child: Container(
+                          constraints:
+                              BoxConstraints(minHeight: 15, minWidth: 15),
+                          decoration: BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.circular(25)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(001),
+                            child: Center(
+                              child: Text(
+                                "5",
+                                style: TextStyle(
+                                    fontSize: 10, color: Colors.white),
+                              ),
+                            ),
+                          )),
+                    )
+                  ],
+                )
               ],
             ),
           )),
