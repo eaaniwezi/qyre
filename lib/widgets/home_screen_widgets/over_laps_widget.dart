@@ -15,16 +15,14 @@ class OverLapsAppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white70,
+      color: Colors.white.withOpacity(0.9),
       child: Container(
-        width: 60,
-        height: 36,
-        margin: EdgeInsets.all(5),
+        constraints: BoxConstraints(minWidth: 80),
+        margin: EdgeInsets.only(left: 15, bottom: 15, right: 0),
         decoration: BoxDecoration(
             color: Colors.black, borderRadius: BorderRadius.circular(4)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -46,14 +44,16 @@ class OverLapsAppBarWidget extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  height: 8,
-                  width: 8,
-                  decoration: BoxDecoration(
-                    color: daysModel.color,
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                ),
+                daysModel.hasColor
+                    ? Container(
+                        height: 8,
+                        width: 8,
+                        decoration: BoxDecoration(
+                          color: daysModel.color,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      )
+                    : Text(""),
                 Text(" " + daysModel.date + " " + daysModel.month,
                     style: TextStyle(
                       fontWeight: FontWeight.w700,

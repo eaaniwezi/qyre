@@ -28,22 +28,15 @@ class _HomeScreenState extends State<HomeScreen> {
         slivers: [
           SliverAppBar(
             pinned: true,
-            backgroundColor: Colors.black.withOpacity(0.0),
-            title: Text(
-              "My Availabity",
-              style: TextStyle(color: Colors.black),
+            elevation: 0,
+            backgroundColor: Colors.white.withOpacity(0.8),
+            title: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 2.0, sigmaY: 1.0),
+              child: Text(
+                "My Availability",
+                style: TextStyle(color: Colors.black),
+              ),
             ),
-            // title: BackdropFilter(
-            //   filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
-            //   child: Container(
-            //     decoration:
-            //         BoxDecoration(color: Colors.black.withOpacity(0.5)),
-            //     child: Text(
-            //       "My Availabity",
-            //       style: TextStyle(color: Colors.black),
-            //     ),
-            //   ),
-            // ),
           ),
           SliverPersistentHeader(
             pinned: true,
@@ -63,7 +56,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            // !
             SizedBox(height: 25),
             headerTextWidget(title: "Today’s productions"),
             ListView.builder(

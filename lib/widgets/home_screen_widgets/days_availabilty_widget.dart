@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import '../../const/theme.dart' as style;
+
 import 'package:qyre/models/days_model.dart';
+
+import '../../const/theme.dart' as style;
 
 class DaysAvailabiltyWidget extends StatelessWidget {
   const DaysAvailabiltyWidget({
@@ -11,23 +13,16 @@ class DaysAvailabiltyWidget extends StatelessWidget {
   }) : super(key: key);
 
   final DaysModel daysModel;
-
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Container(
-      width: 62,
-      constraints: BoxConstraints(
-        minHeight: 0,
-        // maxHeight: size.height * 0.1,
-      ),
-      margin: EdgeInsets.all(5),
+      width: 70,
+      margin: EdgeInsets.only(left: 15),
       decoration: BoxDecoration(
           color: Colors.black, borderRadius: BorderRadius.circular(4)),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(daysModel.isToday ? "Today" : "",
                 style: TextStyle(

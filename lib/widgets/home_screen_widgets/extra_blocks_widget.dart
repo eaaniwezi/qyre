@@ -15,7 +15,7 @@ class ExtraBlocksWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 15, top: 10,),
+      padding: const EdgeInsets.only(left: 15, top: 10),
       child: Container(
         height: 140,
         width: 110,
@@ -26,13 +26,13 @@ class ExtraBlocksWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(4),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.all(10),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SvgPicture.asset(extraModel.img),
-              SizedBox(height: 14),
+              SizedBox(height: 10),
               Text(
                 extraModel.title,
                 style: TextStyle(
@@ -40,7 +40,7 @@ class ExtraBlocksWidget extends StatelessWidget {
                     fontSize: 14,
                     fontWeight: FontWeight.w700),
               ),
-              SizedBox(height: 14),
+              SizedBox(height: 10),
               Text(
                 extraModel.subTitle,
                 style: TextStyle(

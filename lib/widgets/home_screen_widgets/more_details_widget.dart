@@ -29,14 +29,13 @@ class MoreDetailsWidget extends StatelessWidget {
                 alignment: Alignment.topLeft,
                 child: Text(
                   " Complete your profile to optimize\n your exposure in job searches.",
-                  // textAlign: TextAlign.left,
+               
                   style: TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 16,
                   ),
                 ),
               ),
-              // SizedBox(height: 10),
               LinearPercentIndicator(
                 width: 270,
                 lineHeight: 14.0,
