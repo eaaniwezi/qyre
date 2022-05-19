@@ -66,15 +66,18 @@ class _HomeScreenState extends State<HomeScreen> {
                   var productionModel = productionDummyList[index];
                   return ProductionWidget(productionModel: productionModel);
                 })),
-            SizedBox(
-              height: size.height * 0.2,
-              child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: dummyExtraModelList.length,
-                  itemBuilder: ((context, index) {
-                    var extraModel = dummyExtraModelList[index];
-                    return ExtraBlocksWidget(extraModel: extraModel);
-                  })),
+            Padding(
+              padding: const EdgeInsets.only(left: 15, right: 15),
+              child: SizedBox(
+                height: size.height * 0.2,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: dummyExtraModelList.length,
+                    itemBuilder: ((context, index) {
+                      var extraModel = dummyExtraModelList[index];
+                      return ExtraBlocksWidget(extraModel: extraModel);
+                    })),
+              ),
             ),
             SizedBox(height: 25),
             headerTextWidget(title: "My job offers"),
